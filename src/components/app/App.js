@@ -4,16 +4,18 @@ import osheagaLogo from './../../img/osheaga-festival.png';
 import search from '../../services/search.service';
 import { DeparturesList } from '../departuresList/DeparturesList';
 
-export default class App extends Component {
+class App extends Component {
   render() {
     return (
       <div className="container-fluid">
+
         <header className="row">
           <div className="col-xs-12 col-sm-12">
             <img src={osheagaLogo} alt="Osheaga Festival"></img>
             <h1>Find one-way departure schedules for the Osheaga festival's opening weekend.</h1>
           </div>
         </header>
+
         <main>
           <div className="row">
             <div className="col-xs-12 col-sm-12">
@@ -34,6 +36,7 @@ export default class App extends Component {
 
           <DeparturesList departures={this.state.departures} />
         </main>
+
       </div>
     );
   }
@@ -42,3 +45,5 @@ export default class App extends Component {
     this.setState({departures: search()});
   }
 }
+
+export default App;
