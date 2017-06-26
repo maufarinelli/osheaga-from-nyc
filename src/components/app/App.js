@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import './App.css';
 import osheagaLogo from './../../img/osheaga-festival.png';
 import search from '../../services/search.service';
+import { DeparturesList } from '../departuresList/DeparturesList';
 
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
       <div className="container-fluid">
@@ -30,14 +31,14 @@ class App extends Component {
               <button className="btn btn-primary" onClick={this.onSearch}>Search</button>
             </div>
           </div>
+
+          <DeparturesList departures={this.state.departures} />
         </main>
       </div>
     );
   }
 
   onSearch() {
-    search();
+    this.setState({departures: search()});
   }
 }
-
-export default App;
