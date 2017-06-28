@@ -4,14 +4,19 @@ import { Departure } from '../departure/Departure';
 export class DeparturesList extends Component {
 	constructor(props) {
 		super(props);
+		this.departures = [];
+	}
 
-		this.departures = this.props.departures.departures.map(departure => {
-			return {
-				departure: departure.departure_time,
-				arrival: departure.arrival_time,
-				price: departure.prices.total
-			}
-		});
+	componentWillUpdate(nextProps, nextState) {
+		if(nextProps.departures.departures) {
+			this.departures = nextProps.departures.departures.map(departure => {
+				return {
+					departure: departure.departure_time,
+					arrival: departure.arrival_time,
+					price: departure.prices.total
+				}
+			});
+		}
 	}
 
 	render() {
@@ -28,7 +33,7 @@ export class DeparturesList extends Component {
 				<tbody>
 					{ this.departures.map( (departure, i) => {
 						return <Departure information={departure} key={i} />
-					})}
+					}) }
 				</tbody>
 			</table>
 		);

@@ -5,6 +5,15 @@ import search from '../../services/search.service';
 import { DeparturesList } from '../departuresList/DeparturesList';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+			departures: {}
+    };
+
+		this.onSearch = this.onSearch.bind(this);
+  }
+
   render() {
     return (
       <div className="container-fluid">
