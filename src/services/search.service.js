@@ -72,7 +72,7 @@ export default function search() {
 			],
 			"locations": [
 				{
-					"id": 3970,
+					"id": 1938,
 					"city_id": "375dd5879001acbd84a4683dedfb933e",
 					"name": "Métro Bonaventure Bus Station",
 					"address": [
@@ -85,7 +85,7 @@ export default function search() {
 					"geohash": "f25dvfzcz"
 				},
 				{
-					"id": 3971,
+					"id": 1939,
 					"city_id": "375dd5879001acbd84a4683dedfb933e",
 					"name": "Bus Station Berri",
 					"address": [
@@ -98,7 +98,7 @@ export default function search() {
 					"geohash": "f25dvfzcz"
 				},
 				{
-					"id": 3972,
+					"id": 1940,
 					"city_id": "375dd5879001acbd84a4683dedfb933e",
 					"name": "Downtown station",
 					"address": [
@@ -135,7 +135,7 @@ export default function search() {
 					},
 					"available_seats": 55,
 					"prices": {
-						"total": 5200,
+						"total": 82,
 						"breakdown": {
 							"base": 5200
 						},
@@ -147,8 +147,8 @@ export default function search() {
 					],
 					"departure_timezone": "America/New_York",
 					"arrival_timezone": "America/Montreal",
-					"departure_time": "2016-01-14T00:01:00",
-					"arrival_time": "2016-01-14T07:55:00"
+					"departure_time": "2016-01-14T01:00:00",
+					"arrival_time": "2016-01-14T07:45:00"
 				},
 				{
 					"id": "7c5dd26a",
@@ -156,7 +156,7 @@ export default function search() {
 					"checkout_type": "new",
 					"operator_id": "bfc27cd544ca49c18d000f2bc00c58c0",
 					"origin_location_id": 1942,
-					"destination_location_id": 1938,
+					"destination_location_id": 1939,
 					"class": "Business 2",
 					"class_name": "Business 2",
 					"amenities": {
@@ -173,7 +173,7 @@ export default function search() {
 					},
 					"available_seats": 55,
 					"prices": {
-						"total": 5200,
+						"total": 119,
 						"breakdown": {
 							"base": 5200
 						},
@@ -185,8 +185,8 @@ export default function search() {
 					],
 					"departure_timezone": "America/New_York",
 					"arrival_timezone": "America/Montreal",
-					"departure_time": "2016-01-14T00:03:00",
-					"arrival_time": "2016-01-14T09:55:00"
+					"departure_time": "2016-01-14T03:00:00",
+					"arrival_time": "2016-01-14T09:45:00"
 				},
 				{
 					"id": "7c5dd26a",
@@ -194,7 +194,7 @@ export default function search() {
 					"checkout_type": "new",
 					"operator_id": "bfc27cd544ca49c18d000f2bc00c58c0",
 					"origin_location_id": 1942,
-					"destination_location_id": 1938,
+					"destination_location_id": 1940,
 					"class": "Economy",
 					"class_name": "Super Economy",
 					"amenities": {
@@ -211,7 +211,7 @@ export default function search() {
 					},
 					"available_seats": 55,
 					"prices": {
-						"total": 5200,
+						"total": 60,
 						"breakdown": {
 							"base": 5200
 						},
@@ -223,7 +223,7 @@ export default function search() {
 					],
 					"departure_timezone": "America/New_York",
 					"arrival_timezone": "America/Montreal",
-					"departure_time": "2016-01-14T00:05:00",
+					"departure_time": "2016-01-14T05:00:00",
 					"arrival_time": "2016-01-14T11:55:00"
 				}
 			],

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
+import moment from 'moment'
 import { Departure } from '../departure/Departure';
 
 export class DeparturesList extends Component {
@@ -7,13 +9,15 @@ export class DeparturesList extends Component {
 		this.departures = [];
 	}
 
-	componentWillUpdate(nextProps, nextState) {
+	componentWillUpdate(nextProps) {
 		if(nextProps.departures.departures) {
 			this.departures = nextProps.departures.departures.map(departure => {
+				let location = _.find(nextProps.departures.locations, {id: departure.destination_location_id});
 				return {
-					departure: departure.departure_time,
-					arrival: departure.arrival_time,
-					price: departure.prices.total
+					departure: moment(departure.departure_time).format("YYYY/MM/DD - HH:mm"),
+					arrival: moment(departure.arrival_time).format("YYYY/MM/DD - HH:mm"),
+					location: location.name,
+					price: '$' + departure.prices.total
 				}
 			});
 		}
@@ -21,13 +25,13 @@ export class DeparturesList extends Component {
 
 	render() {
 		return (
-			<table>
+			<table className="table table-striped">
 				<thead>
 					<tr>
-						<td>Departure</td>
-						<td>Arrival</td>
-						<td>Location</td>
-						<td>Price USD</td>
+						<th>Departure</th>
+						<th>Arrival</th>
+						<th>Location</th>
+						<th>Price USD</th>
 					</tr>
 				</thead>
 				<tbody>
