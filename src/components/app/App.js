@@ -3,6 +3,7 @@ import './App.css';
 import osheagaLogo from './../../img/osheaga-festival.png';
 import search from '../../services/search.service';
 import { DeparturesList } from '../departuresList/DeparturesList';
+import { translate } from 'react-i18next';
 
 class App extends Component {
   constructor(props) {
@@ -15,12 +16,14 @@ class App extends Component {
   }
 
   render() {
+    const t = this.props.t;
+
     return (
       <div className="container-fluid">
         <header className="row">
           <div className="col-xs-12 col-sm-12 text-center">
             <img src={osheagaLogo} alt="Osheaga Festival"></img>
-            <h1>Find one-way departure for the Osheaga's opening weekend.</h1>
+            <h1>{t('appTitle')}</h1>
           </div>
         </header>
 
