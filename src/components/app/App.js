@@ -25,15 +25,16 @@ class App extends Component {
     return (
       <div className="container-fluid">
         <header className="row">
-          <div className="col-xs-12 col-sm-12 text-center">
-            <img src={osheagaLogo} alt="Osheaga Festival"></img>
-            <h1>{t('appTitle')}</h1>
-          </div>
-          <div className="language">
+          <div className="col-xs-12 col-sm-12 text-right language">
             <ul>
               <li><button className="btn btn-default" onClick={() => changeLanguage('en')}>EN</button></li>
               <li><button className="btn btn-default" onClick={() => changeLanguage('fr')}>FR</button></li>
             </ul>
+          </div>
+
+          <div className="col-xs-12 col-sm-12 text-center">
+            <img src={osheagaLogo} alt="Osheaga Festival"></img>
+            <h1>{t('appTitle')}</h1>
           </div>
         </header>
 
