@@ -3,3 +3,18 @@
 img {
 	max-width: 100%;
 }
+
+.language {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+
+	ul {
+		list-style-type: none;
+
+		li {
+			display: inline-block;
+			margin-right: 2px;
+		}
+	}
+}

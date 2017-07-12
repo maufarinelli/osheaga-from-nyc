@@ -1,26 +1,26 @@
-const i18n = require('i18next');
+import i18n from 'i18next';
+import enContent from './locales/en.js';
+import frContent from './locales/fr.js';
 
-const options = {
-    fallbackLng: 'en',
-    resources:  {
-        en: 'locales/en.json',
-        fr: 'locales/fr.json'
-    },
-    debug: true,
-    interpolation: {
-        escapeValue: false, // not needed for react!!
-        formatSeparator: ',',
-        format: (value, format, lng) => {
-            if (format === 'uppercase') return value.toUpperCase();
-            return value;
+i18n
+    .init({
+        lng: 'en',
+        fallbackLng: 'en',
+        resources: {
+            en: enContent,
+            fr: frContent
+        },
+
+        interpolation: {
+            escapeValue: false, // not needed for react!!
+        },
+
+        // react i18next special options (optional)
+        react: {
+            wait: false, // set to true if you like to wait for loaded in every translated hoc
+            nsMode: 'default' // set it to fallback to let passed namespaces to translated hoc act as fallbacks
         }
-    },
-    react: {
-        wait: true
-    }
-};
+    });
 
-// initialize if not already initialized
-if (!i18n.isInitialized) i18n.init(options);
 
-module.exports = i18n;
+export default i18n;

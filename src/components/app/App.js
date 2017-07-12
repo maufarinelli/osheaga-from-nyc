@@ -16,7 +16,11 @@ class App extends Component {
   }
 
   render() {
-    const t = this.props.t;
+    const { t, i18n } = this.props;
+
+    const changeLanguage = (lng) => {
+      i18n.changeLanguage(lng);
+    };
 
     return (
       <div className="container-fluid">
@@ -25,22 +29,28 @@ class App extends Component {
             <img src={osheagaLogo} alt="Osheaga Festival"></img>
             <h1>{t('appTitle')}</h1>
           </div>
+          <div className="language">
+            <ul>
+              <li><button className="btn btn-default" onClick={() => changeLanguage('en')}>EN</button></li>
+              <li><button className="btn btn-default" onClick={() => changeLanguage('fr')}>FR</button></li>
+            </ul>
+          </div>
         </header>
 
         <main>
           <div className="row">
             <div className="col-xs-12 col-sm-12 text-center">
-              <p><b>From:</b> NYC <span className="glyphicon glyphicon-arrow-right"></span> <b>To:</b> Montreal</p>
+              <p><b>{t('from')}</b> {t('newYork')} <span className="glyphicon glyphicon-arrow-right"></span> <b>{t('to')}</b> {t('montreal')}</p>
             </div>
           </div>
 
           <div className="row">
             <div className="col-xs-12 col-sm-12 text-center">
-              <button className="btn btn-primary" onClick={this.onSearch}>Search</button>
+              <button className="btn btn-primary" onClick={this.onSearch}>{t('searchBtn')}</button>
             </div>
           </div>
 
-          <DeparturesList departures={this.state.departures} />
+          <DeparturesList t={t} departures={this.state.departures} />
         </main>
 
       </div>
@@ -52,4 +62,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default translate()(App);
