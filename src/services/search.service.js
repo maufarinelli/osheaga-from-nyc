@@ -1,14 +1,16 @@
 export default function search() {
-    // let date = new Date(2017, 6, 29),
-    //     request = new Request('https://napi.busbud.com/x-departures/dr5reg/f25dvk/' + date.toISOString(), {
-    //         headers: new Headers({
-    //             'Accept': 'application/vnd.busbud+json; version=2; profile=https://schema.busbud.com/v2/',
-    //             'Content-Type': 'text/plain; charset=utf-8',
-		// 		'X-Busbud-Token': 'PARTNER_JSWsVZQcS_KzxNRzGtIt1A'
-    //         })
-    //     });
+    let date = new Date(2017, 6, 29),
+        request = new Request('https://napi.busbud.com/x-departures/dr5reg/f25dvk/' + date.toISOString(), {
+            headers: new Headers({
+                'Accept': 'application/vnd.busbud+json; version=2; profile=https://schema.busbud.com/v2/',
+                'Content-Type': 'text/plain; charset=utf-8',
+								'X-Busbud-Token': 'PARTNER_JSWsVZQcS_KzxNRzGtIt1A'
+            }),
+						method: 'GET',
+						mode: 'no-cors'
+        });
 
-    const mockData = {
+    /*const mockData = {
 			"origin_city_id": "375dd5879001acbd84a4683dedf9eed1",
 			"destination_city_id": "375dd5879001acbd84a4683ded9c875b",
 			"cities": [
@@ -231,14 +233,12 @@ export default function search() {
 			"complete": false,
 			"ttl": 900,
 			"is_valid_route": true
-		};
+		};*/
 
-    return mockData;
+    //return mockData;
 
-    // fetch(request, {mode: 'cors'})
-    //     .then(result => {
-		// 	console.log(result);
-		// 	return result;
-		// })
-    //     .catch();
+    fetch(request, )
+        .then(result => result.json())
+				.then(data => data)
+        .catch();
 }
