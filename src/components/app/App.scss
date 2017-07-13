@@ -3,3 +3,14 @@
 img {
 	max-width: 100%;
 }
+
+.language {
+	ul {
+		list-style-type: none;
+
+		li {
+			display: inline-block;
+			margin-right: 2px;
+		}
+	}
+}

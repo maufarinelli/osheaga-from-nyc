@@ -3,7 +3,8 @@ export default function search() {
     //     request = new Request('https://napi.busbud.com/x-departures/dr5reg/f25dvk/' + date.toISOString(), {
     //         headers: new Headers({
     //             'Accept': 'application/vnd.busbud+json; version=2; profile=https://schema.busbud.com/v2/',
-    //             'Content-Type': 'text/plain; charset=utf-8'
+    //             'Content-Type': 'text/plain; charset=utf-8',
+		// 		'X-Busbud-Token': 'PARTNER_JSWsVZQcS_KzxNRzGtIt1A'
     //         })
     //     });
 
@@ -235,6 +236,9 @@ export default function search() {
     return mockData;
 
     // fetch(request, {mode: 'cors'})
-    //     .then(result => console.log(result))
+    //     .then(result => {
+		// 	console.log(result);
+		// 	return result;
+		// })
     //     .catch();
 }

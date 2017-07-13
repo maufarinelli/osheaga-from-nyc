@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import moment from 'moment'
 import { Departure } from '../departure/Departure';
+import { translate } from 'react-i18next';
 
 export class DeparturesList extends Component {
 	constructor(props) {
@@ -24,14 +25,16 @@ export class DeparturesList extends Component {
 	}
 
 	render() {
+		const t = this.props.t;
+		
 		return (
 			<table className="table table-striped">
 				<thead>
 					<tr>
-						<th>Departure</th>
-						<th>Arrival</th>
-						<th>Location</th>
-						<th>Price USD</th>
+						<th>{t('tableHeadDeparture')}</th>
+						<th>{t('tableHeadArrival')}</th>
+						<th>{t('tableHeadLocation')}</th>
+						<th>{t('tableHeadPrice')}</th>
 					</tr>
 				</thead>
 				<tbody>
