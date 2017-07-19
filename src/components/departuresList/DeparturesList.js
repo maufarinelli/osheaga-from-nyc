@@ -11,7 +11,7 @@ export class DeparturesList extends Component {
 	}
 
 	componentWillUpdate(nextProps) {
-		if(nextProps.departures.departures) {
+		if(_.get(nextProps, 'departures.departures')) {
 			this.departures = nextProps.departures.departures.map(departure => {
 				let location = _.find(nextProps.departures.locations, {id: departure.destination_location_id});
 				return {
