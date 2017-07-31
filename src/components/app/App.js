@@ -59,7 +59,12 @@ class App extends Component {
   }
 
   onSearch() {
-    this.setState({departures: search()});
+    search()
+        .then((res) => res.json())
+        .then((data) => {
+          this.setState({departures: data});
+        });
+
   }
 }
 

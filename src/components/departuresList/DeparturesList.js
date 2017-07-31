@@ -25,7 +25,7 @@ export class DeparturesList extends Component {
 	}
 
 	render() {
-		const t = this.props.t;
+		const { t } = this.props;
 		
 		return (
 			<table className="table table-striped">
